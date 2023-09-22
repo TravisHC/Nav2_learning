@@ -1,0 +1,109 @@
+[
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DHAVE_DRAND48 -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB -Damcl_core_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -I/home/travis/code/navigation2/nav2_amcl/src/include -isystem /opt/ros/foxy/include -isystem /usr/include/eigen3  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o CMakeFiles/amcl_core.dir/src/amcl_node.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/amcl_node.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/amcl_node.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB -I/home/travis/code/navigation2/nav2_amcl/include -isystem /opt/ros/foxy/include -isystem /usr/include/eigen3  -g   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o CMakeFiles/amcl.dir/src/main.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/main.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/main.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -DHAVE_DRAND48 -Dpf_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -I/home/travis/code/navigation2/nav2_amcl/src/pf/../include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/pf/CMakeFiles/pf_lib.dir/pf.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/pf/pf.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/pf/pf.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -DHAVE_DRAND48 -Dpf_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -I/home/travis/code/navigation2/nav2_amcl/src/pf/../include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/pf/CMakeFiles/pf_lib.dir/pf_kdtree.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/pf/pf_kdtree.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/pf/pf_kdtree.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -DHAVE_DRAND48 -Dpf_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -I/home/travis/code/navigation2/nav2_amcl/src/pf/../include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/pf/CMakeFiles/pf_lib.dir/pf_pdf.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/pf/pf_pdf.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/pf/pf_pdf.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -DHAVE_DRAND48 -Dpf_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -I/home/travis/code/navigation2/nav2_amcl/src/pf/../include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/pf/CMakeFiles/pf_lib.dir/pf_vector.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/pf/pf_vector.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/pf/pf_vector.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -DHAVE_DRAND48 -Dpf_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -I/home/travis/code/navigation2/nav2_amcl/src/pf/../include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/pf/CMakeFiles/pf_lib.dir/eig3.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/pf/eig3.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/pf/eig3.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -DHAVE_DRAND48 -Dpf_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -I/home/travis/code/navigation2/nav2_amcl/src/pf/../include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/pf/CMakeFiles/pf_lib.dir/pf_draw.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/pf/pf_draw.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/pf/pf_draw.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -Dmap_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/map/CMakeFiles/map_lib.dir/map.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/map/map.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/map/map.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -Dmap_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/map/CMakeFiles/map_lib.dir/map_range.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/map/map_range.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/map/map_range.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/cc -Dmap_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -o src/map/CMakeFiles/map_lib.dir/map_draw.c.o   -c /home/travis/code/navigation2/nav2_amcl/src/map/map_draw.c",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/map/map_draw.c"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -Dmap_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o src/map/CMakeFiles/map_lib.dir/map_cspace.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/map/map_cspace.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/map/map_cspace.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB -Dmotions_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -isystem /opt/ros/foxy/include -isystem /usr/include/eigen3  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o src/motion_model/CMakeFiles/motions_lib.dir/omni_motion_model.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/motion_model/omni_motion_model.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/motion_model/omni_motion_model.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB -Dmotions_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include -isystem /opt/ros/foxy/include -isystem /usr/include/eigen3  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o src/motion_model/CMakeFiles/motions_lib.dir/differential_motion_model.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/motion_model/differential_motion_model.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/motion_model/differential_motion_model.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -Dsensors_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o src/sensors/CMakeFiles/sensors_lib.dir/laser/laser.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/sensors/laser/laser.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/sensors/laser/laser.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -Dsensors_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o src/sensors/CMakeFiles/sensors_lib.dir/laser/beam_model.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/sensors/laser/beam_model.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/sensors/laser/beam_model.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -Dsensors_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o src/sensors/CMakeFiles/sensors_lib.dir/laser/likelihood_field_model.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/sensors/laser/likelihood_field_model.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/sensors/laser/likelihood_field_model.cpp"
+},
+
+{
+  "directory": "/home/travis/code/navigation2/build",
+  "command": "/usr/bin/c++  -Dsensors_lib_EXPORTS -I/home/travis/code/navigation2/nav2_amcl/include  -g -fPIC   -Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -std=gnu++14 -o src/sensors/CMakeFiles/sensors_lib.dir/laser/likelihood_field_model_prob.cpp.o -c /home/travis/code/navigation2/nav2_amcl/src/sensors/laser/likelihood_field_model_prob.cpp",
+  "file": "/home/travis/code/navigation2/nav2_amcl/src/sensors/laser/likelihood_field_model_prob.cpp"
+}
+]

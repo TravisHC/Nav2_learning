@@ -1,0 +1,190 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						4,
+						7
+					]
+				},
+				{
+					"build" : "src/pf",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/pf",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "src/map",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/map",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/motion_model",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/motion_model",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/sensors",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/sensors",
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "nav2_amcl",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "amcl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-amcl-Debug-2fb5fa09c345159bb15b.json",
+					"name" : "amcl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "amcl_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-amcl_core-Debug-dd2fa38f3c824c51fab4.json",
+					"name" : "amcl_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "map_lib::@49e5eb6817f363ea937d",
+					"jsonFile" : "target-map_lib-Debug-9e61e2dc7dd608eabe7a.json",
+					"name" : "map_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "motions_lib::@5e1e9c748dc741bc738a",
+					"jsonFile" : "target-motions_lib-Debug-a80f9d4e1fa43dd8fcb2.json",
+					"name" : "motions_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nav2_amcl_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nav2_amcl_uninstall-Debug-16aa1c0c512994ffc4c1.json",
+					"name" : "nav2_amcl_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "pf_lib::@519c1e393164ec5b0875",
+					"jsonFile" : "target-pf_lib-Debug-017d34cac2244e4d5924.json",
+					"name" : "pf_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "sensors_lib::@8d2b3ec0edc5ac3fa2bf",
+					"jsonFile" : "target-sensors_lib-Debug-b7b8479c7086fc32ebcf.json",
+					"name" : "sensors_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-28d831828824624af140.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/travis/code/navigation2/build",
+		"source" : "/home/travis/code/navigation2/nav2_amcl"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}
