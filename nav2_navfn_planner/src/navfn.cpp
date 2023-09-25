@@ -41,6 +41,12 @@
 // Path calc has sanity check that it succeeded
 //
 
+/*
+根据https://answers.ros.org/question/11388/navfn-algorism/?answer=16891#answer-container-16891 中诉说，这个实现事实上不是Dijkstra算法，而是Wavefront expansion algorithm, https://en.wikipedia.org/wiki/Wavefront_expansion_algorithm，但是他跟Dijkstra算法一样都是基于BFS的，只是在计算邻节点的cost时上有一些不同。比起Dijkstra构建了一个邻节点的代价遍历树，这个算法初始时将除了起点外（pot为0）所有点都很大的potential值，然后在遍历过程中逐渐降低potential值，最后通过梯度下降法从终点回溯到起点，得到一条完整的路径。！！！终点->起点！！！
+
+原文：
+It is called Wavefront expansion algorithm, but it essentially has the same breadth first search propogation as the conventional dijkstras algorithm, the only difference is instead of constructing a tree of neighbours based on cost traversal, it assumes initially that all cells are at high potential except the start which is at zero potential, assigns finite potential values to each cell during traversal and then uses gradient descent to trace path back from end to start
+*/
 
 /*
 全局规划中使用Dijkstra算法进行实际计算的部分在NavFn类里完成，它通过传入的costmap来设置costarr数组，再通过costarr数组对存储地图上所有cell点Potential值的potarr数组进行更新，并通过potarr数组来计算梯度gradX和gradY，通过迭代比较，最终得到一条完整的全局规划路径。
@@ -468,6 +474,16 @@ NavFn::updateCell(int n)
       const float v = -0.2301 * div * div + 0.5307 * div + 0.7040;
       pot = ta + hf * v;
     }
+
+    /*
+    关于这里的quadratic approximation的解释：
+    Ros answer page: https://answers.ros.org/question/11388/navfn-algorism/?answer=16891#answer-container-16891
+    大意：pot是由通过一个cell的通过性因子（traversability factor,即代码中的hf）和该cell距离上一个cell的距离（dc）计算得到的。上面的if-else其实就是在考虑是直接穿过一个点成本低，还是绕着这个点走成本较低。具体来说：比较dc和hf的大小关系，如果dc大于等于hf，那么就直接用ta+hf作为pot，即直接穿过当前点；否则就用二次插值的方法计算pot，即采用绕行当前点？
+
+    关于具体的二次插值的系数是怎么得到，参考：https://github.com/locusrobotics/robot_navigation/tree/master/dlux_global_planner#the-kernel
+    详细推导过程见：https://github.com/locusrobotics/robot_navigation/blob/master/dlux_global_planner/Derivation.md
+
+    */
 
     //      ROS_INFO("[Update] new pot: %d\n", costarr[n]);
 
