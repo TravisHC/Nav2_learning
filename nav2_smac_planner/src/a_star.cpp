@@ -54,6 +54,12 @@ AStarAlgorithm<NodeT>::~AStarAlgorithm()
 {
 }
 
+//  需要重点关注的初始化函数，smac中三种规划器在初始化时主要的不同在于是否传入了lookup_table_size和dim_3_size。
+
+//  1.在smac_planner_2d中,这两个参数是没有用到的，Node2D模板中直接没有table_size这个参数，dim_3_size也必须为1。
+//  2.在smac_planner_hybrid中，对第三个维度的衡量是角度，因此传入的是_angle_quantizations即角度共分为多少份，也即角度size；而table_size是由设置的table_size以及世界坐标系下的最小转弯半径以及地图分辨率和下采样系数共同计算得到的，并做了处理保证是奇数。
+//  3.在smac_planner_lattice中，dim_3_size传入的是number_of_headings(官方注释：The number of headings to discretize a 360 degree turn into，应该和hybrid中的_angle_quantizations是一个意思？），即第三个维度考虑的是headings朝向；而table_size仅通过设置和地图分辨率计算得到，也做了处理保证是奇数。
+
 template<typename NodeT>
 void AStarAlgorithm<NodeT>::initialize(
   const bool & allow_unknown,
@@ -241,6 +247,8 @@ bool AStarAlgorithm<NodeT>::areInputsValid()
 
   return true;
 }
+
+//  TODO 关注核心函数createPath是如何分别处理三种规划器的传入参数以及不同的算法实现的。
 
 template<typename NodeT>
 bool AStarAlgorithm<NodeT>::createPath(

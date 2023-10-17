@@ -1,3 +1,14 @@
 {
-    "cmake.sourceDirectory": "/home/travis/code/nav2_learning/nav2_amcl"
+    "cmake.sourceDirectory": "/home/travis/code/nav2_learning/nav2_amcl",
+    "files.associations": {
+        "any": "cpp",
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "optional": "cpp",
+        "variant": "cpp"
+    }
 }

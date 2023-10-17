@@ -242,6 +242,9 @@ nav_msgs::msg::Path SmacPlannerLattice::createPlan(
 
   std::unique_lock<nav2_costmap_2d::Costmap2D::mutex_t> lock(*(_costmap->getMutex()));
 
+  // lattice这里没有用cost_map_downsampler,csdn上的解释：由于生成的格取决于成本图分辨率，因此不适用于 State Lattice。
+  //  TODO 待加深理解
+
   // Set collision checker and costmap information
   _a_star->setCollisionChecker(&_collision_checker);
 
@@ -300,6 +303,8 @@ nav_msgs::msg::Path SmacPlannerLattice::createPlan(
   for (int i = path.size() - 1; i >= 0; --i) {
     pose.pose = getWorldCoords(path[i].x, path[i].y, _costmap);
     pose.pose.orientation = getWorldOrientation(path[i].theta);
+    //  由于2d和Hybrid都做过剪枝，所以这里的pose不会重复，lattice则需要过滤太近似的点
+    //  TODO 为什么是1e-4? 0.1mm？经验值？
     if (fabs(pose.pose.position.x - last_pose.pose.position.x) < 1e-4 &&
       fabs(pose.pose.position.y - last_pose.pose.position.y) < 1e-4 &&
       fabs(tf2::getYaw(pose.pose.orientation) - tf2::getYaw(last_pose.pose.orientation)) < 1e-4)

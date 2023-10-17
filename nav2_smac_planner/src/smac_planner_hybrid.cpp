@@ -75,6 +75,9 @@ void SmacPlannerHybrid::configure(
     node, name + ".downsampling_factor", rclcpp::ParameterValue(1));
   node->get_parameter(name + ".downsampling_factor", _downsampling_factor);
 
+  //  在ReadME中的注释: angle_quantization_bins  #For Hybrid nodes: Number of angle bins for search, must be 1 for 2D node (no angle search)
+  //  个人理解应该是将角度等分的分数，即每次搜索时角度的步长为360/angle_quantization_bins度
+  //  下面angle_quantization_bins默认为72，即每次搜索时角度的步长_angle_bin_size为5度
   nav2_util::declare_parameter_if_not_declared(
     node, name + ".angle_quantization_bins", rclcpp::ParameterValue(72));
   node->get_parameter(name + ".angle_quantization_bins", angle_quantizations);
@@ -333,6 +336,7 @@ nav_msgs::msg::Path SmacPlannerHybrid::createPlan(
             std::to_string(start.pose.position.y) + ") was outside bounds");
   }
 
+  // _angle_bin_size为每次搜索时角度的步长，即角度的分辨率
   double orientation_bin = tf2::getYaw(start.pose.orientation) / _angle_bin_size;
   while (orientation_bin < 0.0) {
     orientation_bin += static_cast<float>(_angle_quantizations);
@@ -382,6 +386,7 @@ nav_msgs::msg::Path SmacPlannerHybrid::createPlan(
     expansions = std::make_unique<std::vector<std::tuple<float, float, float>>>();
   }
   // Note: All exceptions thrown are handled by the planner server and returned to the action
+  //  只有Hybrid的createPath传入了expansions参数，2d和lattice都没有传入expansions参数，just for debug
   if (!_a_star->createPath(
       path, num_iterations,
       _tolerance / static_cast<float>(costmap->getResolution()), expansions.get()))
