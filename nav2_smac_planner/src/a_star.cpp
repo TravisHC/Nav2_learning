@@ -390,6 +390,8 @@ typename AStarAlgorithm<NodeT>::NodePtr & AStarAlgorithm<NodeT>::getGoal()
   return _goal;
 }
 
+//  国际惯例，用priority_queue优先级队列来实现A*算法的open_set
+//  三种算法这里processSearchNode的实现都不一样
 template<typename NodeT>
 typename AStarAlgorithm<NodeT>::NodePtr AStarAlgorithm<NodeT>::getNextNode()
 {

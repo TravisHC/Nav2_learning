@@ -67,6 +67,10 @@ typename AnalyticExpansion<NodeT>::NodePtr AnalyticExpansion<NodeT>::tryAnalytic
     // We want to expand at a rate of d/expansion_ratio,
     // but check to see if we are so close that we would be expanding every iteration
     // If so, limit it to the expansion ratio (rounded up)
+
+    //  IMPORTANT 工程trick: 每隔d/expansion_ratio个迭代次数进行一次《one shot》
+    //  所谓one shot即尝试当前节点到目标节点的直接连接，并尝试生成解析解轨迹，若成功则直接找到可行路径不必再循规蹈矩多次迭代探索。
+    //  由于尝试间隔轮次与当前节点到终点的距离成反比，也即越靠近终点则越频繁尝试one shot，这样可以保证在靠近终点时能够快速找到可行路径,而在前期并不会太过耗时。
     int desired_iterations = std::max(
       static_cast<int>(closest_distance / _search_info.analytic_expansion_ratio),
       static_cast<int>(std::ceil(_search_info.analytic_expansion_ratio)));
@@ -270,6 +274,7 @@ typename AnalyticExpansion<Node2D>::NodePtr AnalyticExpansion<Node2D>::setAnalyt
   return NodePtr(nullptr);
 }
 
+//  2d无需操作，直接返回空指针
 template<>
 typename AnalyticExpansion<Node2D>::NodePtr AnalyticExpansion<Node2D>::tryAnalyticExpansion(
   const NodePtr & current_node, const NodePtr & goal_node,

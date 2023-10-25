@@ -16,12 +16,13 @@
 
 namespace nav2_smac_planner
 {
-
+//  2d无需操作，为空
 template<typename Node2D>
 void NodeBasic<Node2D>::processSearchNode()
 {
 }
 
+//  hybrid中确保了每个节点只处理一次pose，并且记录了motion_index和turn_dir
 template<>
 void NodeBasic<NodeHybrid>::processSearchNode()
 {
@@ -34,6 +35,9 @@ void NodeBasic<NodeHybrid>::processSearchNode()
   }
 }
 
+//  同样地，lattice中也确保了每个节点只处理一次pose防止新的轨迹分支覆盖了已经访问过的且具有较低成本的节点
+//  lattice中还记录了motion_primitive和backward
+//  这里的prim_ptr是一个结构体的指针，包含了id，始末角度，转弯半径，长度等等信息，backward指是否是反向的轨迹
 template<>
 void NodeBasic<NodeLattice>::processSearchNode()
 {
